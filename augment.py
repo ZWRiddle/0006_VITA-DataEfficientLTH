@@ -328,7 +328,7 @@ class SubPolicy:
             "translateY": np.linspace(0, 150 / 331, 10),
             "rotate": np.linspace(0, 30, 10),
             "color": np.linspace(0.0, 0.9, 10),
-            "posterize": np.round(np.linspace(8, 4, 10), 0).astype(np.int),
+            "posterize": np.round(np.linspace(8, 4, 10), 0).astype(int),
             "solarize": np.linspace(256, 0, 10),
             "contrast": np.linspace(0.0, 0.9, 10),
             "sharpness": np.linspace(0.0, 0.9, 10),
@@ -473,6 +473,7 @@ CustomAugment = iaa.Sequential(
                     [
                         iaa.Multiply((0.5, 1.5), per_channel=0.5),
                         iaa.FrequencyNoiseAlpha(
+                        # iaa.BlendAlphaFrequencyNoise(
                             exponent=(-4, 0),
                             first=iaa.Multiply((0.5, 1.5), per_channel=True),
                             second=iaa.LinearContrast((0.5, 2.0)),

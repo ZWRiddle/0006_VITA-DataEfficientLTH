@@ -1,0 +1,61 @@
+pruning state: 0
+remaining weight at start of iteration =  100.0
+best_val =  0.4963
+pruning state: 1
+remaining weight at start of iteration =  80.00309519508153
+best_val =  0.5496
+pruning state: 2
+remaining weight at start of iteration =  64.00557852009887
+best_val =  0.5742
+pruning state: 3
+remaining weight at start of iteration =  51.20756518011276
+best_val =  0.5961
+pruning state: 4
+remaining weight at start of iteration =  40.96912762455337
+best_val =  0.6013000000000001
+pruning state: 5
+remaining weight at start of iteration =  32.778384749058
+best_val =  0.6098
+pruning state: 6
+remaining weight at start of iteration =  26.225774318519413
+best_val =  0.6151
+pruning state: 7
+remaining weight at start of iteration =  20.98370210423083
+best_val =  0.6174999999999999
+pruning state: 8
+remaining weight at start of iteration =  16.79004433279996
+best_val =  0.6205999999999999
+pruning state: 9
+remaining weight at start of iteration =  13.435109154465108
+best_val =  0.6224
+pruning state: 10
+remaining weight at start of iteration =  10.751196856557865
+best_val =  0.623
+pruning state: 11
+remaining weight at start of iteration =  8.60406881047011
+best_val =  0.6269000000000001
+pruning state: 12
+remaining weight at start of iteration =  6.886369958075966
+best_val =  0.6237
+pruning state: 13
+remaining weight at start of iteration =  5.512171446923942
+best_val =  0.5932
+pruning state: 14
+remaining weight at start of iteration =  4.412848482762977
+best_val =  0.6178999999999999
+pruning state: 15
+remaining weight at start of iteration =  3.5333793580059947
+best_val =  0.5964
+pruning state: 16
+remaining weight at start of iteration =  2.8297915125341966
+best_val =  0.5904
+pruning state: 17
+remaining weight at start of iteration =  2.2669212361567492
+best_val =  0.5817999999999999
+pruning state: 18
+remaining weight at start of iteration =  1.8166483141492162
+best_val =  0.5701999999999999
+pruning state: 19
+remaining weight at start of iteration =  1.4564263920671228
+remaining weight at end of iteration =  1.1682614000676717
+best_val =  0.5313

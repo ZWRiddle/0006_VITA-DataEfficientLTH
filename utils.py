@@ -129,109 +129,68 @@ def add_args(parser):
     parser.add_argument("--dist", action="store_true", help="start distributed training")
     parser.add_argument("--seed", type=int, default=42, help="set experiment seed.")
     parser.add_argument("--dset", type=str, default="cifar10", help="choose dataset")
-    parser.add_argument(
-        "--contrast_aug",
-        action="store_true",
-        help="apply contrastive augmentation (source: simclr)",
-    )
-    parser.add_argument(
-        "--color_jitter_strength", type=float, default=0.5, help="color jitter strength"
-    )
-    parser.add_argument(
-        "--color_jitter_prob", type=float, default=0.8, help="color jitter probability"
-    )
+
+    parser.add_argument("--contrast_aug", action="store_true", help="apply contrastive augmentation (source: simclr)")
+    parser.add_argument("--color_jitter_strength", type=float, default=0.5, help="color jitter strength")
+    parser.add_argument("--color_jitter_prob", type=float, default=0.8, help="color jitter probability")
     parser.add_argument("--gray_prob", type=float, default=0.2, help="gray probability")
     parser.add_argument("--rand_aug", action="store_true", help="apply random augmentation")
-    parser.add_argument(
-        "--n_rand_aug", type=int, default=4, help="number of sequential random augmentations"
-    )
+    parser.add_argument("--n_rand_aug", type=int, default=4, help="number of sequential random augmentations")
     parser.add_argument("--auto_aug", action="store_true", help="apply auto augmentation")
-    parser.add_argument(
-        "--auto_aug_policy",
-        type=int,
-        default=2,
-        help="autoaugment policy number (eg: 1: imagenet, 2: cifar)",
-    )
-    parser.add_argument(
-        "--custom_aug",
-        action="store_true",
-        help="apply custom augmentation (source: imgaug) note: very strong",
-    )
+    parser.add_argument("--auto_aug_policy", type=int, default=2, help="autoaugment policy number (eg: 1: imagenet, 2: cifar)")
+    parser.add_argument("--custom_aug", action="store_true", help="apply custom augmentation (source: imgaug) note: very strong")
     parser.add_argument("--blur", action="store_true", help="apply gaussian blur")
     parser.add_argument("--blur_sigma", type=list, default=[0.1, 2], help="blur sigma")
     parser.add_argument("--blur_prob", type=float, default=0.5, help="blur probability")
     parser.add_argument("--cutout", action="store_true", help="apply cutout")
     parser.add_argument("--cut_len", type=int, default=16, help="cutsize in cutout")
-    parser.add_argument(
-        "--data_root",
-        type=str,
-        default="/home/sneezygiraffe/data/cifar10",
-        help="dataset directory.",
-    )
+
+    parser.add_argument("--data_root", type=str, default="/home/sneezygiraffe/data/cifar10", help="dataset directory.")
     # parser.add_argument("--data_root", type=str, required=True, help="dataset directory.")
-    parser.add_argument(
-        "--data_size",
-        type=float,
-        default=1.0,
-        help="training dataset size (fraction or number of samples).",
-    )
+    parser.add_argument("--data_size", type=float, default=1.0, help="training dataset size (fraction or number of samples).")
+    parser.add_argument("--data_size_2", type=float, default=0.05, help="training dataset size for the second run")
     parser.add_argument("--long_tailed", action="store_true", help="long tailed classification")
     parser.add_argument("--long_tailed_type", type=str, default="exp", help="long tailed type")
-    parser.add_argument(
-        "--long_tailed_factor", type=float, default=0.01, help="long tailed factor"
-    )
+    parser.add_argument("--long_tailed_factor", type=float, default=0.01, help="long tailed factor")
     parser.add_argument("--batch_size", type=int, default=100, help="batch size.")
-    parser.add_argument(
-        "--n_workers", type=int, default=4, help="number of workers for dataloading."
-    )
+    parser.add_argument("--n_workers", type=int, default=4, help="number of workers for dataloading.")
     parser.add_argument("--net", type=str, default="resnet18", help="network name")
     parser.add_argument("--in_planes", type=int, default=64, help="resnet init feature size")
-    parser.add_argument(
-        "--pretrained", action="store_true", help="use pretrained torchvision ckpt"
-    )
+    parser.add_argument("--pretrained", action="store_true", help="use pretrained torchvision ckpt")
     parser.add_argument("--optim", type=str, default="sgd", help="optimizer name")
+
     parser.add_argument("--lr", type=float, default=0.1, help="sgd learning rate.")
     parser.add_argument("--momentum", type=float, default=0.9, help="sgd optimizer momentum.")
-    parser.add_argument(
-        "--weight_decay", type=float, default=5e-4, help="sgd optimizer weight decay."
-    )
+    parser.add_argument("--weight_decay", type=float, default=5e-4, help="sgd optimizer weight decay.")
     parser.add_argument("--warmup_epochs", type=int, default=0, help="number of lr warmup epochs.")
     parser.add_argument("--lr_sched", type=str, default="cosine", help="lr scheduler name.")
-    parser.add_argument(
-        "--multi_step_milestones", type=list, default=[100, 150], help="multi step lr milestones."
-    )
+    parser.add_argument("--multi_step_milestones", type=list, default=[100, 150], help="multi step lr milestones.")
     parser.add_argument("--multi_step_gamma", type=float, default=0.1, help="multi step lr gamma.")
     parser.add_argument("--resume", action="store_true", help="resume training from checkpoint.")
-    parser.add_argument(
-        "-o",
-        "--out_dir",
-        type=str,
-        default=f"{datetime.now().strftime('%Y-%m-%d_%H-%M')}",
-        help="path to output directory [default: year-month-date_hour-minute].",
-    )
-    parser.add_argument(
-        "--pruning_iters", type=int, default=16, help="number of pruning iterations."
-    )
+
+    parser.add_argument("-o", "--out_dir", type=str, default=f"{datetime.now().strftime('%Y-%m-%d_%H-%M')}",
+        help="path to output directory [default: year-month-date_hour-minute].")
+    # Newly added!
+    parser.add_argument("--load_dir", type=str, default=f"null",
+        help="path to load from previous training, keep null to train a new imp then load [default: year-month-date_hour-minute].")
+    parser.add_argument("--pruning_iters", type=int, default=16, help="number of pruning iterations.")
     parser.add_argument("--epochs", type=int, default=200, help="number of epochs.")
     parser.add_argument("--rewind_type", type=str, default="epoch", help="rewind type.")
     parser.add_argument("--rewind_epoch", type=int, default=2, help="rewind epochs.")
-    parser.add_argument("--prune_type", type=str, default="l1", help="pruning type.")
+    parser.add_argument("--prune_type", type=str, default="l1", help="pruning type, l1 or rand.")
+    # Newly added!
+    parser.add_argument("--prune_strategy", type=str, default="full_dset", help="pruning strategy, e.g. full_dset, ERK, etc.")
     parser.add_argument("--prune_rate", type=float, default=0.2, help="pruning rate.")
+    
     parser.add_argument("--load_ticket", type=str, default="", help="load ticket to train.")
-    parser.add_argument(
-        "--adv_prop", action="store_true", help="adversarial propagation training scheme."
-    )
-    parser.add_argument(
-        "--cos_criterion", action="store_true", help="use cosine loss with cross entropy."
-    )
+    parser.add_argument("--adv_prop", action="store_true", help="adversarial propagation training scheme.")
+    parser.add_argument("--cos_criterion", action="store_true", help="use cosine loss with cross entropy.")
     parser.add_argument("--cos_linear", action="store_true", help="use cosine linear layer.")
     parser.add_argument("--tvmf_linear", action="store_true", help="use tvmf linear layer.")
     parser.add_argument("--attack_n_iter", type=int, default=1, help="number of attack iters.")
     parser.add_argument("--attack_eps", type=float, default=8 / 255, help="attack epsilon.")
     parser.add_argument("--attack_step_size", type=int, default=2 / 255, help="attack step size.")
-    parser.add_argument(
-        "--prune_ff_only", action="store_true", help="prune feedforward layers only"
-    )
+    parser.add_argument("--prune_ff_only", action="store_true", help="prune feedforward layers only")
 
     return parser
 
@@ -240,6 +199,7 @@ def setup_device(dist):
     if dist:
         torch.distributed.init_process_group(backend="nccl", init_method="env://")
         local_rank = int(os.environ.get("LOCAL_RANK"))
+        # local_rank = 0
         torch.cuda.set_device(local_rank)
         device = torch.device(f"cuda:{local_rank}")
     else:

@@ -30,12 +30,18 @@ Additional datasets must be downloaded and placed in the appropriate directories
 
 ```bash
 # to run cifar10 all augmentation strategies, all data sizes
-bash run_cifar10.sh sparse 1 imp
+bash scripts/run_cifar10.sh sparse 1 imp
 bash run_cifar10.sh sparse 0.5 imp
 bash run_cifar10.sh sparse 0.2 imp
 bash run_cifar10.sh sparse 0.1 imp
 bash run_cifar10.sh sparse 0.02 imp
 bash run_cifar10.sh sparse 0.01 imp
+
+############################################################
+# Customize bash run
+bash scripts_new/run_cifar10_full-small.sh sparse 1 imp 0.05
+bash scripts_new/run_cifar10_full-small.sh
+bash scripts_new/run_cifar10_small-small.sh
 
 # run other methods on cifar10 subsets
 bash run_cifar10_othermethods.sh
