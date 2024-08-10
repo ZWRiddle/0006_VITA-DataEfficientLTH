@@ -1,0 +1,27 @@
+# Ignore directories with large or unnecessary files
+checkpoints/
+data/
+New-IMP_ckpts/
+outputs/
+obsolete/
+
+# Ignore temporary and log files
+tmp.out
+nohup.out
+
+# Ignore Python bytecode and cache
+__pycache__/
+*.pyc
+*.pyo
+
+# Ignore Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Ignore specific file types
+*.zip
+*.dat
+
+# Ignore specific files if needed
+helpers.ipynb
+temp.py
+utils_custom.py
