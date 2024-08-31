@@ -697,6 +697,7 @@ class Trainer:
                 utils.mask_prune(self.model, curr_mask)
 
         # Begin for-loop of iterations...
+        overall_best = 0
         for iter in range(prune_iter_start, self.args.pruning_iters):
             if self.main_thread and self.args.pruning_iters > 1:
                 linechecktime()

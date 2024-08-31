@@ -54,7 +54,7 @@ python3 "mytrain.py" --dset $DATASET --data_root data/ --data_size $DATA_SIZE --
     --seed $SEED\
     --out_dir "checkpoints/${PROJECT_NAME}"\
     --load_dir "checkpoints/${LoadTimeStamp}_${OUT_DIR_PREFIX}_${DATA_SIZE}_${AUGMENTATION}"\
-    --epoch 2 --pruning_iters 2 --lr 0.1 --prune_rate 0.2\
+    --epoch 160 --pruning_iters 20 --lr 0.1 --prune_rate 0.2\
     > "outputs/${PROJECT_NAME}.out"\
     
 # grep 'epoch:\|pruning state:\|best_val = \|remaining weight\|layerwise sparsity =\|Checkpoint'\

@@ -9,4 +9,14 @@ set -e
 # SeedIndex="${6:-"0"}"
 
 
-bash scripts/mytrain.sh SNIP+ IMP cifar10 0.02 autoaug 1
+nohup bash scripts/mytrain.sh SNIP+ IMP cifar10 0.1 autoaug 1 &
+nohup bash scripts/mytrain.sh SNIP+ IMP cifar10 0.1 autoaug 2 &
+nohup bash scripts/mytrain.sh SNIP+ IMP cifar10 0.1 autoaug 3 &
+nohup bash scripts/mytrain.sh SNIP+ IMP cifar10 0.1 autoaug 4 &
+nohup bash scripts/mytrain.sh SNIP+ IMP cifar10 0.1 autoaug 5 &
+
+# nohup bash scripts/mytrain.sh New IMP cifar10 0.02 autoaug 1 &
+# nohup bash scripts/mytrain.sh New IMP cifar10 0.02 autoaug 2 &
+# nohup bash scripts/mytrain.sh New IMP cifar10 0.02 autoaug 3 &
+# nohup bash scripts/mytrain.sh New IMP cifar10 0.02 autoaug 4 &
+# nohup bash scripts/mytrain.sh New IMP cifar10 0.02 autoaug 5 &

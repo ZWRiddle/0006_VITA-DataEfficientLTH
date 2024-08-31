@@ -3,7 +3,7 @@ checkpoints/
 data/
 New-IMP_ckpts/
 outputs/
-obsolete/
+obsolete
 
 # Ignore temporary and log files
 tmp.out

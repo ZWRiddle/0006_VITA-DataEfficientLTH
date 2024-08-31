@@ -1,0 +1,61 @@
+pruning state: 0
+remaining weight at start of iteration =  100.0
+best_val =  0.5468000000000001
+pruning state: 1
+remaining weight at start of iteration =  79.46375700406622
+best_val =  0.10000000000000002
+pruning state: 2
+remaining weight at start of iteration =  63.215604801477376
+best_val =  0.10000000000000002
+pruning state: 3
+remaining weight at start of iteration =  50.335291891054865
+best_val =  0.10000000000000002
+pruning state: 4
+remaining weight at start of iteration =  40.11340565372241
+best_val =  0.10000000000000002
+pruning state: 5
+remaining weight at start of iteration =  31.99284681956608
+best_val =  0.10000000000000002
+pruning state: 6
+remaining weight at start of iteration =  25.535359422583916
+best_val =  0.10000000000000002
+pruning state: 7
+remaining weight at start of iteration =  20.395668805881982
+best_val =  0.10000000000000002
+pruning state: 8
+remaining weight at start of iteration =  16.301318943812625
+best_val =  0.10000000000000002
+pruning state: 9
+remaining weight at start of iteration =  13.03710685466527
+best_val =  0.10000000000000002
+pruning state: 10
+remaining weight at start of iteration =  10.432680313483944
+best_val =  0.10000000000000002
+pruning state: 11
+remaining weight at start of iteration =  8.353236136680376
+best_val =  0.10000000000000002
+pruning state: 12
+remaining weight at start of iteration =  6.691777713735137
+best_val =  0.10000000000000002
+pruning state: 13
+remaining weight at start of iteration =  5.363496340966833
+best_val =  0.10000000000000002
+pruning state: 14
+remaining weight at start of iteration =  4.300905295274804
+best_val =  0.10000000000000002
+pruning state: 15
+remaining weight at start of iteration =  3.4503987371173883
+best_val =  0.10000000000000002
+pruning state: 16
+remaining weight at start of iteration =  2.769240750617963
+best_val =  0.10000000000000002
+pruning state: 17
+remaining weight at start of iteration =  2.223450502686919
+best_val =  0.10000000000000002
+pruning state: 18
+remaining weight at start of iteration =  1.7859472766584616
+best_val =  0.10000000000000002
+pruning state: 19
+remaining weight at start of iteration =  1.4350360311534027
+remaining weight at end of iteration =  1.1534485527319394
+best_val =  0.10000000000000002
